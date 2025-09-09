@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MTSRL</title>
+  <link rel="icon" href="./resources/sucrologo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span style="font-weight: normal;"><b>MTSRL</b> </span>: <br>Multi-Task Safe Locomotion Learning for Legged Robots</span>
+          </h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/MLXFranklove">Luxin Man</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/hhhhh121">Yongzhi Wang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://faculty.sdu.edu.cn/chenteng12/en/index.htm">Teng Chen</a><sup>1</sup><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/KK-Zhou">Qiqi Zhou</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/JIangHan1913">Han Jiang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              <a href="http://webplus.qlu.edu.cn/_s100/2021/0916/c8150a173172/page.psp">Shao Xu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://faculty.sdu.edu.cn/zhangguoteng/en/index.htm">Guoteng Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://control.sdu.edu.cn/info/1084/6477.htm">Xuewen Rong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://control.sdu.edu.cn/info/1083/2291.htm">Yibin Li</a><sup>1</sup>
+              <br>
+              <br>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>
+                  Shandong University
+                </span>
+                <span class="author-block">
+                  <sup>*</sup>
+                  Corresponding author
+                </span>
+              </div>
+
+            </span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+            <!-- Supplementary Video link -->
+            <span class="link-block">
+              <a href="https://www.bilibili.com/video/BV1VuhYz5Ej1/?spm_id_from=333.1387.homepage.video_card.click&vd_source=736cfb38212a04d92f6c2d7a4b97d5d7" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-bilibili"></i>
+              </span>
+              <span>SDUQuad48 Video</span>
+              </a>
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src=".\resources\MTSRL\MTSRL_v1.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Recent advances have demonstrated that reinforce-
+ment learning (RL) has become an effective solution for legged
+robot locomotion. While single-task RL has achieved remarkable
+success, learning a unified policy capable of handling diverse
+tasks for quadrupedal robots remains a significant challenge.
+In this paper, we propose MTSRL, a novel multi-task safe
+reinforcement learning framework for legged robot locomotion.
+To prevent overfitting to specific tasks, the framework incorpo-
+rates multi-task replay buffers. The multi-critic actor learning
+approach is adopted, where a separate critic is maintained for
+each task to avoid negative interference between task value
+estimates. Our approach enables a single policy to accomplish
+six blind locomotion tasks for legged robots, encompassing both
+quadrupedal and bipedal gaits. The quadrupedal tasks include
+locomotion over complex terrains, as well as control of body
+pitch, roll, and base height. The bipedal tasks involve locomotion
+over challenging terrains in both stand and handstand postures.
+Extensive indoor and outdoor experiments conducted on a real
+quadrupedal robot validate the effectiveness of the proposed
+method, demonstrating strong and robust multi-task locomotion
+capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper Method -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Method</h2>
+        <img src="./resources/frame_V5.png" alt="Framework" style="width: 100%; height: auto; margin-bottom: 20px;" data-immersive-translate-walked="246d7402-74de-46fe-bdda-4a3edd1c0f55">
+        <div class="content has-text-justified">
+          <p>
+Overview of the learning framework. We first construct a multi-task reinforcement learning simulation environment, where agents corresponding to different tasks are assigned reward functions specifically designed for their respective task objectives, along with task-specific training configurations. The current proprioception $\boldsymbol{o}_t$, student historical proprioception $\boldsymbol{o}_{t-H:t}^{s}$ and full state $\boldsymbol{s}_t$ are normalized and then fed into the teacher and student policies. Both policies are trained using the constrained reinforcement learning algorithm NP3O with multi-task replay buffers, under an asymmetric actor-critic framework. The teacher and student encoders are optimized jointly using policy gradients and supervised learning, enabling mutual approximation from both directions. All teacher and student agents share a common cost critic and policy network, while each task-specific agent is equipped with an individual reward critic. The actuator network is trained offline to facilitate sim-to-real transfer by improving low-level control robustness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Method -->
+
+<!-- Paper Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Regularization Reward</h2>
+        <img src=".\resources\MTSRL\Reward\Regularization.jpg" alt="Framework" style="width: 100%; height: auto; margin-bottom: 20px;" data-immersive-translate-walked="246d7402-74de-46fe-bdda-4a3edd1c0f55">
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Method -->
+
+<!-- Experiments Video -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Six-Skill Policy</h2>
+        <tr>
+          <td>
+          
+          <p style="font-size: 20px;  text-align: justify;">MTSRL enables legged robots to safely and robustly perform
+          six distinct tasks using a single policy, including quadrupedal locomotion,
+          bipedal locomotion in stand and handstand postures over complex terrain, and
+          body height, pitch, and roll control on flat ground. The policy relies solely
+          on proprioception and demonstrates strong generalization and safety across
+          diverse and challenging real-world scenarios.</p>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                     src="./resources/MTSRL/Six_Skills/six_skills_in_grass.mp4" width="100%"
+                     style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                     src="./resources/MTSRL/Six_Skills/six_skills_in_stairs.mp4" width="100%"
+                     style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                     src="./resources/MTSRL/Six_Skills/six_skills_stairs2.mp4" width="100%"
+                     style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Six-Skill Policy for Complex Terrain Task</h3>
+          <div class="row">
+            <!-- <div class="col" style="display:flex; justify-content: center;">
+              <h4 class="title is-4" style="text-align: center; margin-bottom: 10px; font-size: x-large;"> Running on Grass </h3>
+              <video autoplay muted loop playsinline controls 
+                     src="./resources/MTSRL/Six_Skills/six_skills_high_platform.mp4" width="100%"
+                     style="border-radius:10px;"></video>
+            </div> -->
+            <div class="col" style="text-align: center; margin-bottom: 10px;">
+            <h3 class="title is-4" style="font-size: 1.5rem; margin-bottom: 10px;">25cm-high platform</h3>
+            <video autoplay muted loop playsinline controls 
+                  src="./resources/MTSRL/Six_Skills/six_skills_high_platform.mp4" width="100%"
+                  style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                     src="./resources/MTSRL/Six_Skills/six_skills_complex_slope.mp4" width="100%"
+                     style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <!-- <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Trolley</h3> -->
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Trolley.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Trolley2.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <!-- <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/上下坡2.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div> -->
+          </div>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Six-Skill Policy for Base Height Control Task</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/base_height_task/base_height_task-1.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/base_height_task/base_height_task-2.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Six-Skill Policy for Handstand Task</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/handstand_task/handtstand_stairs.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <!-- <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/base_height_task/base_height_task-2.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div> -->
+          </div>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Six-Skill Policy for Stand Task</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/stand_task/stand_slope.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/stand_task/stand_stairs.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Slippery Road Surface</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/slippery _road_surface/slippery _road_surface-1.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/slippery _road_surface/slippery _road_surface-2.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+          
+          <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Anti-disturbance</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/pitch_base_height_task.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/roll_task.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/complex_task.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/hand_leg.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/handstand_push.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/stand_push.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Anti-disturbance/push.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+        <h3 class="title is-3" style="text-align: center; margin-bottom: 20px; font-size: x-large;">Mechanical Failure</h3>
+          <div class="row">
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Mechanical failure/Mechanical failure-stairs.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+            <div class="col">
+              <video autoplay muted loop playsinline controls 
+                    src="./resources/MTSRL/Six_Skills/Mechanical failure/Mechanical failure_stand.mp4" width="100%"
+                    style="border-radius:10px;"></video>
+            </div>
+          </div>
+          <br>
+
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Four-Skill Policy</h2>
+          <p style="font-size: 20px;  text-align: justify;">MTSRL enables legged robots to robustly execute four distinct tasks with a single proprioceptive policy, including quadrupedal and bipedal locomotion in stand and handstand postures over complex terrain, as well as pitch control on flat ground.
+          </p>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                <video autoplay muted loop playsinline controls 
+                      src=".\resources\MTSRL\Four_Skills\four_skills.mp4" width="100%"
+                      style="border-radius:10px;"></video>
+              </div>
+            </div>
+            <br>
+
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+<!-- End Experiments Video -->
+
+<!-- Paper conclusion -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Conclusion</h2>
+        <div class="content has-text-justified">
+          <p>
+We propose MTSRL, a unified and safe multi-task reinforcement learning framework for quadrupedal robots that enables a single policy to support both quadrupedal and bipedal gaits. To prevent overfitting to specific tasks, the framework incorporates multi-task replay buffers, while concurrent training of teacher-student policies is introduced to improve overall policy learning. The proposed method is validated through real-world experiments, where the robot successfully completes six diverse locomotion tasks relying solely on proprioceptive sensing, highlighting the strong robustness and generalization capabilities of MTSRL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper conclusion -->
+
+<!-- BibTex citation -->
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre>
+        <code>      
+          @article{zhou2025alarm,
+              title={ALARM: Safe Reinforcement Learning with Reliable Mimicry for Robust Legged Locomotion}, 
+              author={Zhou, Qiqi and Ding, Hui and Chen, Teng and Man, Luxin and Jiang, Han and Zhang, Guoteng and Li, Bin and Rong, Xuewen and Li, Yibin},
+              year={2025},
+              journal={IEEE Robotics and Automation Letters}, 
+              volume={10},
+              number={7},
+              pages={6768-6775},
+              doi={10.1109/LRA.2025.3572427}
+          }
+        </code>
+      </pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
