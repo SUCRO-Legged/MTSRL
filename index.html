@@ -153,27 +153,31 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-Recent advances have demonstrated that reinforce-
-ment learning (RL) has become an effective solution for legged
-robot locomotion. While single-task RL has achieved remarkable
-success, learning a unified policy capable of handling diverse
-tasks for quadrupedal robots remains a significant challenge.
-In this paper, we propose MTSRL, a novel multi-task safe
-reinforcement learning framework for legged robot locomotion.
-To prevent overfitting to specific tasks, the framework incorpo-
-rates multi-task replay buffers. The multi-critic actor learning
-approach is adopted, where a separate critic is maintained for
-each task to avoid negative interference between task value
-estimates. Our approach enables a single policy to accomplish
-six blind locomotion tasks for legged robots, encompassing both
-quadrupedal and bipedal gaits. The quadrupedal tasks include
-locomotion over complex terrains, as well as control of body
-pitch, roll, and base height. The bipedal tasks involve locomotion
-over challenging terrains in both stand and handstand postures.
-Extensive indoor and outdoor experiments conducted on a real
-quadrupedal robot validate the effectiveness of the proposed
-method, demonstrating strong and robust multi-task locomotion
-capabilities.
+Recent advances have demonstrated that rein-
+forcement learning (RL) has become an effective solution for
+legged robot locomotion. While single-task RL has achieved
+remarkable success, learning a unified policy capable of han-
+dling diverse tasks for quadrupedal robots remains a significant
+challenge. In this paper, we propose MTSRL, a novel multi-
+task safe reinforcement learning framework for legged robot
+locomotion. The framework integrates multi-task concurrent
+teacher–student learning, multi-critic actor learning, and multi-
+task normalized penalized proximal policy optimization. To
+prevent overfitting to specific tasks, the framework incorporates
+multi-task replay buffers. The multi-critic actor learning ap-
+proach is adopted, where a separate critic is maintained for each
+task to avoid negative interference between task value estimates.
+Task-specific safety penalties enable balanced enforcement of
+safety constraints across tasks. Our approach enables a single
+policy to accomplish six blind locomotion tasks for legged
+robots, encompassing both quadrupedal and bipedal gaits. The
+quadrupedal tasks include locomotion over complex terrains, as
+well as control of body pitch, roll, and base height. The bipedal
+tasks involve locomotion over challenging terrains in both
+stand and handstand postures. Extensive indoor and outdoor
+experiments conducted on a real quadrupedal robot validate
+the effectiveness of the proposed method, demonstrating strong
+and robust multi-task locomotion capabilities. 
           </p>
         </div>
       </div>
@@ -191,7 +195,7 @@ capabilities.
         <img src="./resources/frame_V5.png" alt="Framework" style="width: 100%; height: auto; margin-bottom: 20px;" data-immersive-translate-walked="246d7402-74de-46fe-bdda-4a3edd1c0f55">
         <div class="content has-text-justified">
           <p>
-Overview of the learning framework. We first construct a multi-task reinforcement learning simulation environment, where agents corresponding to different tasks are assigned reward functions specifically designed for their respective task objectives, along with task-specific training configurations. The current proprioception $\boldsymbol{o}_t$, student historical proprioception $\boldsymbol{o}_{t-H:t}^{s}$ and full state $\boldsymbol{s}_t$ are normalized and then fed into the teacher and student policies. Both policies are trained using the constrained reinforcement learning algorithm NP3O with multi-task replay buffers, under an asymmetric actor-critic framework. The teacher and student encoders are optimized jointly using policy gradients and supervised learning, enabling mutual approximation from both directions. All teacher and student agents share a common cost critic and policy network, while each task-specific agent is equipped with an individual reward critic. The actuator network is trained offline to facilitate sim-to-real transfer by improving low-level control robustness.
+Overview of MTSRL. Each task uses task-specific rewards and training configurations. Normalized current proprioception $\tilde{\boldsymbol{o}}_t$, student observation history $\tilde{\boldsymbol{o}}_{t-H:t}^{s}$, and full state $\tilde{\boldsymbol{s}}_t$ are provided to the corresponding actor and critic networks under an asymmetric actor--critic framework. MTCTS combines task-specific replay buffers with concurrent teacher--student training. MTNP3O computes normalized safety penalties separately for each task and teacher--student group, enabling balanced enforcement of safety constraints across tasks. All agents share a policy network and a cost critic, while each task has a dedicated reward critic. An offline-trained actuator network supports sim-to-real transfer.
           </p>
         </div>
       </div>
